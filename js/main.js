@@ -7,4 +7,4 @@ function orderNowClicked() {
   location.href = 'html/menu.html';
 }
 
-populateText();
+// populateText();

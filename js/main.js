@@ -7,4 +7,4 @@ function orderNowClicked() {
   location.href = 'html/drinks.html';
 }
 
-// populateText();
+populateText();

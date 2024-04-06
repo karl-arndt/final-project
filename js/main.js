@@ -4,7 +4,7 @@ function populateText(language = 'en') {
 }
 
 function orderNowClicked() {
-  location.href = 'html/menu.html';
+  location.href = 'html/drinks.html';
 }
 
 // populateText();

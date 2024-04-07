@@ -25,6 +25,17 @@ function sidesClicked() {
   }
 }
 
+function cartClicked() {
+  let parent = document.querySelector('#content');
+  parent.innerHTML ='';
+  for (const item in cart) {
+    let child = document.createElement('div');
+    child.innerHTML = `<div class="items"><p>${cart[item].name}</p><p>x${cart[item].amount}</p>
+    <p>$${(Number(cart[item].price) * Number(cart[item].amount)).toFixed(2)}</p>`
+    parent.appendChild(child);
+  }
+}
+
 function addDrinkClicked(buttonID) {
   if (cart.hasOwnProperty(buttonID)) {
     let amount = Number(cart[buttonID].amount);

@@ -35,7 +35,7 @@ body {
   width: 100%;
 }
 
-.drinks, .sides {
+.drinks, .sides, .items{
   display: flex;
   justify-content: space-around;
   padding-bottom: 10px;

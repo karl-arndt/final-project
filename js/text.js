@@ -1,5 +1,5 @@
  const TEXT = {
-  "en": {
-    "coke": "Coca Cola"
+  en: {
+    coke: "Coca Cola"
   }
 }

@@ -4,9 +4,12 @@ function drinksClicked() {
   let parent = document.querySelector('#content');
   parent.innerHTML ="";
 
-  let child = document.createElement('div');
-  child.class = 'drink';
-  child.innerHTML = `<img src="${drinks.coke.img}"><p>${drinks.coke.name}</p>
-    <p>$${Number(drinks.coke.price).toFixed(2)}</p>`;
-  parent.appendChild(child);
+  for (const drink in drinks) {
+    let child = document.createElement('div');
+    child.class = 'drink';
+    child.style.display = "flex";
+    child.innerHTML = `<img src="${drinks[drink].img}" class="drink-img"><p>${drinks[drink].name}</p>
+      <p>$${Number(drinks[drink].price).toFixed(2)}</p><button>Add</button>`;
+    parent.appendChild(child);
+  }
 }

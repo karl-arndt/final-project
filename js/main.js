@@ -36,11 +36,19 @@ function addDrinkClicked(buttonID) {
     cart[buttonID].price = DRINKS[buttonID].price;
     cart[buttonID].amount = 1;
   }
-  alert(Object.entries(cart));
 }
 
 function addSideClicked(buttonID) {
-  alert(buttonID);
+  if (cart.hasOwnProperty(buttonID)) {
+    let amount = Number(cart[buttonID].amount);
+    amount += 1;
+    cart[buttonID].amount = amount;
+  } else {
+    cart[buttonID] = {};
+    cart[buttonID].name = SIDES[buttonID].name;
+    cart[buttonID].price = SIDES[buttonID].price;
+    cart[buttonID].amount = 1;
+  }
 }
 
 

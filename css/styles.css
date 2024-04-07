@@ -11,21 +11,20 @@ body {
   margin-left: -10px;
 }
 
-#navbar a {
-  color: #f2f2f2;
+#navbar button {
   text-align: center;
   padding: 14px 20px;
-  width: 20%;
+  width: 25%;
   text-decoration: none;
   font-size: 17px;
 }
 
-#navbar a:hover {
+#navbar button:hover {
   background-color: #ddd;
   color: black;
 }
 
-#navbar a:active {
+#navbar button:active {
   background-color: #04AA6D;
   color: white;
 }

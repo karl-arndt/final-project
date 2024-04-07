@@ -1,14 +1,11 @@
-let price = 0;
-function populateText(language = 'en') {
-  document.querySelector('.name').innerHTML = TEXT[language].name;
-  document.querySelector('#order').innerHTML = TEXT[language].order;
+let language = 'en';
+
+function drinksClicked() {
+  let parent = document.querySelector('#content');
+  parent.innerHTML ="";
+
+  let child = document.createElement('div');
+  child.class = 'drink';
+  child.innerHTML = `<p>${items.drinks.coke.price}</p>`;
+  parent.appendChild(child);
 }
-
-function orderNowClicked() {
-  location.href = 'html/drinks.html';
-  price = 3;
-}
-
-console.log(price);
-populateText();
-

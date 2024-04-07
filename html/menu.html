@@ -6,21 +6,17 @@
   <title>Document</title>
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/main.js" defer></script>
-  <script src="/js/text.js"></script>
+  <script src="/js/text.js" defer></script>
+  <script src="/js/menu-items.js" defer></script>
 </head>
-<body>
-  <h1 class="name"></h1>
-  <div id="drinks-container">
-    <div class="drink">
-      <img src="" alt="" class="drink-img">
-      <p class="drink-name"></p>
-      <p class="drink-price"></p>
-      <button class="add-to-cart" onclick="addToCart()"></button>
-    </div>
-  </div>
+<body onload="drinksClicked()">
+
+  <h1 class="name">The Ramen Bar</h1>
+
+  <div id="content"></div>
 
   <div id="navbar" class="sticky">
-    <button class="nav-button">Drinks</button>
+    <button class="nav-button" id="drinks-button" onclick="drinksClicked()">Drinks</button>
     <button class="nav-button">Ramen</button>
     <button class="nav-button">Sides</button>
     <button class="nav-button">Cart</button>

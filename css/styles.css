@@ -35,7 +35,7 @@ body {
   width: 100%;
 }
 
-.drinks, .sides, .items{
+.drinks, .sides, .cart {
   display: flex;
   justify-content: space-around;
   padding-bottom: 10px;
@@ -44,4 +44,8 @@ body {
 }
 .drink-img, .sides-img {
   height: 15vh;
+}
+
+.cart-img, .cart p {
+  width: 15%;
 }

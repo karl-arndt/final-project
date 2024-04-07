@@ -1,12 +1,20 @@
-let drinks = {
+const DRINKS = {
   coke: {
-    img: '/images/coke.png',
+    img: '/images/drinks/coke.png',
     name: TEXT[language].coke,
     price: '2'
   },
   diet_coke: {
-    img: '/images/diet-coke.png',
+    img: '/images/drinks/diet-coke.png',
     name: TEXT[language].diet_coke,
     price: '2'
+  }
+}
+
+const SIDES = {
+  kimchi: {
+    img: '',
+    name: TEXT[language].kimchi,
+    price: '1'
   }
 }

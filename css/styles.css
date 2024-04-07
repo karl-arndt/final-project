@@ -35,6 +35,11 @@ body {
   width: 100%;
 }
 
+.drinks {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
 .drink-img {
-  width: 40%;
+  height: 15vh;
 }

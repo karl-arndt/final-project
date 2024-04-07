@@ -35,11 +35,11 @@ body {
   width: 100%;
 }
 
-.drinks {
+.drinks, .sides {
   display: flex;
   justify-content: space-around;
   padding-bottom: 10px;
 }
-.drink-img {
+.drink-img, .sides-img {
   height: 15vh;
 }

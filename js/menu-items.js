@@ -1,4 +1,9 @@
 const DRINKS = {
+  water: {
+    img: '',
+    name: TEXT[language].water,
+    price: '1'
+  },
   coke: {
     img: '/images/drinks/coke.png',
     name: TEXT[language].coke,

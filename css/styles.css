@@ -39,6 +39,8 @@ body {
   display: flex;
   justify-content: space-around;
   padding-bottom: 10px;
+  padding-left: 10%;
+  width: 90%;
 }
 .drink-img, .sides-img {
   height: 15vh;

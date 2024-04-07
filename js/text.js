@@ -2,6 +2,7 @@
   en: {
     coke: "Coca Cola",
     diet_coke: "Diet Coca Cola",
-    kimchi : "Kimchi"
+    kimchi : "Kimchi",
+    water: "Water"
   }
 }

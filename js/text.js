@@ -8,6 +8,11 @@
     shio: "Shio",
     miso: "Miso",
     tonkotsu: "Tonkotsu",
-    
+    pork: "Pork Belly",
+    egg: "Soft Boiled Egg",
+    bamboo_shoot: "Fermented Bamboo Shoot",
+    fish_cake: "Steamed Fish Cake",
+    seaweed: "Dried Seaweed",
+    green_onion: "Green Onion",
   }
 }

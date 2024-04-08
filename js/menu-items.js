@@ -29,5 +29,20 @@ const RAMEN = {
     img: '',
     name: TEXT[language].shoyu,
     price: 12
+  },
+  shio: {
+    img: '',
+    name: TEXT[language].shio,
+    price: 10
+  },
+  miso: {
+    img: '',
+    name: TEXT[language].miso,
+    price: 11
+  },
+  tonkotsu: {
+    img: '',
+    name: TEXT[language].tonkotsu,
+    price: 14
   }
 }

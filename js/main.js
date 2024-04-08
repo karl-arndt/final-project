@@ -13,6 +13,12 @@ function drinksClicked() {
   }
 }
 
+function ramenClicked() {
+  let parent = document.querySelector('#content');
+  parent.innerHTML = '';
+  
+}
+
 function sidesClicked() {
   let parent = document.querySelector('#content');
   parent.innerHTML ="";

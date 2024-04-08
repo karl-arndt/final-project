@@ -16,7 +16,17 @@ function drinksClicked() {
 function ramenClicked() {
   let parent = document.querySelector('#content');
   parent.innerHTML = '';
-  
+  let form = document.createElement('form');
+  parent.appendChild(form);
+  for(topping in TOPPINGS) {
+    let child = document.createElement('div');
+    child.innerHTML = `<input type="checkbox" id="${topping}" name="${topping}">
+    <label for="${topping}">${TOPPINGS[topping].name}</label>`;
+    form.appendChild(child);
+  }
+  let submit = document.createElement('div');
+  submit.innerHTML = '<button id="ramen-submit" onclick="ramenSubmitClicked()">Submit</button>'
+  parent.appendChild(submit);
 }
 
 function sidesClicked() {
@@ -68,6 +78,10 @@ function addSideClicked(buttonID) {
     cart[buttonID].price = SIDES[buttonID].price;
     cart[buttonID].amount = 1;
   }
+}
+
+function ramenSubmitClicked() {
+  alert('test');
 }
 
 

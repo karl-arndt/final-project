@@ -4,6 +4,10 @@
     diet_coke: "Diet Coca Cola",
     water: "Water",
     kimchi: "Kimchi",
-    shoyu: "Shoyu"
+    shoyu: "Shoyu",
+    shio: "Shio",
+    miso: "Miso",
+    tonkotsu: "Tonkotsu",
+    
   }
 }

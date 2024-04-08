@@ -21,7 +21,7 @@ function ramenClicked() {
   for(topping in TOPPINGS) {
     let child = document.createElement('div');
     child.innerHTML = `<input type="checkbox" id="${topping}" name="${topping}">
-    <label for="${topping}">${TOPPINGS[topping].name}</label>`;
+      <label for="${topping}">${TOPPINGS[topping].name}</label>`;
     form.appendChild(child);
   }
   let submit = document.createElement('div');

@@ -46,3 +46,37 @@ const RAMEN = {
     price: 14
   }
 }
+
+const TOPPINGS = {
+  pork: {
+    img: '',
+    name: TEXT[language].pork,
+    price: 1.50
+  },
+  egg: {
+    img: '',
+    name: TEXT[language].egg,
+    price: 1
+  },
+  bamboo_shoot: {
+    img: '',
+    name: TEXT[language].bamboo_shoot,
+    price: 0.75
+  },
+  fish_cake: {
+    img: '',
+    name: TEXT[language].fish_cake,
+    price: 0.75
+  },
+  seaweed: {
+    img: '',
+    name:TEXT[language].seaweed,
+    price: 0.50
+  },
+  green_onion: {
+    img: '',
+    name: TEXT[language].green_onion,
+    price: 0.50
+  },
+
+}

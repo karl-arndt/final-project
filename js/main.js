@@ -20,9 +20,9 @@ function ramenClicked() {
   parent.appendChild(form);
   for (const ramen in RAMEN) {
     let child = document.createElement('div');
-    child.innerHTML = `<input type="radio" id="${ramen}" name="ramen" value="${ramen}"
+    child.innerHTML = `<div class="ramen-radio"><input type="radio" id="${ramen}" name="ramen" value="${ramen}"
       onclick="ramenRadioClicked(this.id)" checked>
-      <label for="${ramen}">${RAMEN[ramen].name}</label>`;
+      <label for="${ramen}"><p>${RAMEN[ramen].name}</p><p>$${Number(RAMEN[ramen].price).toFixed(2)}</p></label></div>`;
     form.appendChild(child);
   }
   for (const topping in TOPPINGS) {
@@ -66,7 +66,7 @@ function cartClicked() {
         } else {
           let arr = cart[item][String(index)];
           for (let i = 0; i < arr.length; i++) {
-            grandchild.innerHTML += `<div class="cart-ramen-toppings">${TOPPINGS[arr[i]].name}</div>`;
+            grandchild.innerHTML += `<div class="cart-ramen-topping">${TOPPINGS[arr[i]].name}</div>`;
           }
           child.appendChild(grandchild);
         }

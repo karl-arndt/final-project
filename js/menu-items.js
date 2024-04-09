@@ -21,6 +21,11 @@ const SIDES = {
     img: '',
     name: TEXT[language].kimchi,
     price: 1
+  },
+  rice: {
+    img: '',
+    name: TEXT[language].rice,
+    price: 1
   }
 }
 

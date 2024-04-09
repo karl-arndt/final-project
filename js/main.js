@@ -18,21 +18,18 @@ function ramenClicked() {
   parent.innerHTML = '';
   let form = document.createElement('form');
   parent.appendChild(form);
-
   for (const ramen in RAMEN) {
     let child = document.createElement('div');
     child.innerHTML = `<input type="radio" id="${ramen}" name="ramen" value="${RAMEN[ramen].name}>
-    <label for="${ramen}">${RAMEN[ramen].name}</label>`;
+      <label for="${ramen}">${RAMEN[ramen].name}</label>`;
     form.appendChild(child);
   }
-
   for (const topping in TOPPINGS) {
     let child = document.createElement('div');
     child.innerHTML = `<input type="checkbox" id="${topping}" name="${topping}">
       <label for="${topping}">${TOPPINGS[topping].name}</label>`;
     form.appendChild(child);
   }
-  
   let submit = document.createElement('div');
   submit.innerHTML = '<button id="ramen-submit" onclick="ramenSubmitClicked()">Submit</button>'
   parent.appendChild(submit);

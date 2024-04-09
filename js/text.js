@@ -4,6 +4,7 @@
     diet_coke: "Diet Coca Cola",
     water: "Water",
     kimchi: "Kimchi",
+    rice: "Rice",
     shoyu: "Shoyu",
     shio: "Shio",
     miso: "Miso",

@@ -20,7 +20,8 @@ function ramenClicked() {
   parent.appendChild(form);
   for (const ramen in RAMEN) {
     let child = document.createElement('div');
-    child.innerHTML = `<input type="radio" id="${ramen}" name="ramen" value="${RAMEN[ramen].name}" checked>
+    child.innerHTML = `<input type="radio" id="${ramen}" name="ramen" value="${RAMEN[ramen].name}"
+       onclick="ramenRadioClicked(this.id)" checked>
       <label for="${ramen}">${RAMEN[ramen].name}</label>`;
     form.appendChild(child);
   }
@@ -89,6 +90,10 @@ function addSideClicked(buttonID) {
 
 function ramenSubmitClicked() {
   alert('test');
+}
+
+function ramenRadioClicked(radio) {
+  alert(radio);
 }
 
 

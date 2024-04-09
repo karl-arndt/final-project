@@ -20,7 +20,7 @@ function ramenClicked() {
   parent.appendChild(form);
   for (const ramen in RAMEN) {
     let child = document.createElement('div');
-    child.innerHTML = `<input type="radio" id="${ramen}" name="ramen" value="${RAMEN[ramen].name}>
+    child.innerHTML = `<input type="radio" id="${ramen}" name="ramen" value="${RAMEN[ramen].name}" checked>
       <label for="${ramen}">${RAMEN[ramen].name}</label>`;
     form.appendChild(child);
   }

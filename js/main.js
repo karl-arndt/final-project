@@ -18,12 +18,21 @@ function ramenClicked() {
   parent.innerHTML = '';
   let form = document.createElement('form');
   parent.appendChild(form);
-  for(topping in TOPPINGS) {
+
+  for (const ramen in RAMEN) {
+    let child = document.createElement('div');
+    child.innerHTML = `<input type="radio" id="${ramen}" name="ramen" value="${RAMEN[ramen].name}>
+    <label for="${ramen}">${RAMEN[ramen].name}</label>`;
+    form.appendChild(child);
+  }
+
+  for (const topping in TOPPINGS) {
     let child = document.createElement('div');
     child.innerHTML = `<input type="checkbox" id="${topping}" name="${topping}">
       <label for="${topping}">${TOPPINGS[topping].name}</label>`;
     form.appendChild(child);
   }
+  
   let submit = document.createElement('div');
   submit.innerHTML = '<button id="ramen-submit" onclick="ramenSubmitClicked()">Submit</button>'
   parent.appendChild(submit);
@@ -46,8 +55,9 @@ function cartClicked() {
   parent.innerHTML ='';
   for (const item in cart) {
     let child = document.createElement('div');
-    child.innerHTML = `<div class="cart"><img src="${cart[item].img}" class="cart-img"><p>${cart[item].name}</p><p>x${cart[item].amount}</p>
-    <p>$${(Number(cart[item].price) * Number(cart[item].amount)).toFixed(2)}</p></div>`
+    child.innerHTML = `<div class="cart"><img src="${cart[item].img}" class="cart-img">
+      <p>${cart[item].name}</p><p>x${cart[item].amount}</p>
+      <p>$${(Number(cart[item].price) * Number(cart[item].amount)).toFixed(2)}</p></div>`
     parent.appendChild(child);
   }
 }

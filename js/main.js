@@ -28,7 +28,7 @@ function ramenClicked() {
   for (const topping in TOPPINGS) {
     let child = document.createElement('div');
     child.innerHTML = `<input type="checkbox" id="${topping}" name="topping">
-      <label for="${topping}">${TOPPINGS[topping].name}</label>`;
+      <label for="${topping}">${TOPPINGS[topping].name} $${TOPPINGS[topping].price.toFixed(2)}</label>`;
     form.appendChild(child);
   }
   let submit = document.createElement('div');
@@ -66,7 +66,7 @@ function cartClicked() {
         } else {
           let arr = cart[item][String(index)];
           for (let i = 0; i < arr.length; i++) {
-            grandchild.innerHTML += `<div class="cart-ramen-topping">${TOPPINGS[arr[i]].name}</div>`;
+            grandchild.innerHTML += `<div class="cart-ramen-topping">${TOPPINGS[arr[i]].name} $${TOPPINGS[arr[i]].price.toFixed(2)}</div>`;
           }
           child.appendChild(grandchild);
         }

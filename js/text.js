@@ -3,6 +3,7 @@
     coke: "Coca Cola",
     diet_coke: "Diet Coca Cola",
     water: "Water",
+    green_tea: "Green Tea",
     kimchi: "Kimchi",
     rice: "Rice",
     shoyu: "Shoyu",

@@ -2,7 +2,12 @@ const DRINKS = {
   water: {
     img: '',
     name: TEXT[language].water,
-    price: 2
+    price: 1
+  },
+  green_tea: {
+    img: '',
+    name: TEXT[language].green_tea,
+    price: 1.50
   },
   coke: {
     img: '/images/drinks/coke.png',

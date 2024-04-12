@@ -74,8 +74,12 @@ function cartClicked() {
     }
   }
   let totalPrice = document.createElement('div');
-  totalPrice.innerHTML = `<div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div>`
+  totalPrice.innerHTML = `<div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div>`;
   parent.appendChild(totalPrice);
+  
+  let submitOrder = document.createElement('div');
+  submitOrder.innerHTML = `<button id="submit-order-button" onclick="submitOrder()">Place your order</button>`;
+  parent.appendChild(submitOrder);
 }
 
 function addDrinkClicked(buttonID) {
@@ -167,4 +171,13 @@ function getTotalPrice() {
     }
   }
   return cost;
+}
+
+function submitOrder() {
+  if (Object.keys(cart).length === 0) {
+    alert(TEXT[language].empty_cart);
+  } else {
+    let parent = document.querySelector('#content');
+    parent.innerHTML = '';
+  }
 }

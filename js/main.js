@@ -3,7 +3,7 @@ let cart = {};
 
 function drinksClicked() {
   let parent = document.querySelector('#content');
-  parent.innerHTML ="";
+  parent.innerHTML = "";
   for (const drink in DRINKS) {
     let child = document.createElement('div');
     child.innerHTML = `<div class="drinks"><img src="${DRINKS[drink].img}" class="drink-img">
@@ -73,6 +73,9 @@ function cartClicked() {
       }
     }
   }
+  let totalPrice = document.createElement('div');
+  totalPrice.innerHTML = `<div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div>`
+  parent.appendChild(totalPrice);
 }
 
 function addDrinkClicked(buttonID) {
@@ -131,8 +134,6 @@ function ramenSubmitClicked() {
   }
 }
 
-
-
 function setRamenToppings() {
   let toppingsCheckbox = document.getElementsByName('topping');
   let toppings = [];
@@ -145,11 +146,25 @@ function setRamenToppings() {
 }
 
 function getTotalPrice() {
-  let price = 0;
+  let cost = 0;
   for (const item in cart) {
     if (DRINKS.hasOwnProperty(item)) {
-      price += DRINKS[item].price;
+      cost += (DRINKS[item].price * cart[item].amount);
+    } else if (SIDES.hasOwnProperty(item)) {
+      cost += (SIDES[item].price * cart[item].amount);
+    } else if (RAMEN.hasOwnProperty(item)) {
+      for (let index = 1; true; index++) {
+        if (!cart[item].hasOwnProperty(String(index))) {
+          break;
+        } else {
+          let arr = cart[item][String(index)];
+          for (let i = 0; i < arr.length; i++) {
+            cost += TOPPINGS[arr[i]].price;
+          }
+        }
+      }
+      cost += RAMEN[item].price * cart[item].amount;
     }
   }
+  return cost;
 }
-

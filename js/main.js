@@ -7,7 +7,7 @@ function drinksClicked() {
   for (const drink in DRINKS) {
     let child = document.createElement('div');
     child.innerHTML = `<div class="drinks"><img src="${DRINKS[drink].img}" class="drink-img">
-      <p>${DRINKS[drink].name}</p><p>$${Number(DRINKS[drink].price).toFixed(2)}</p>
+      <p>${DRINKS[drink].name}</p><p>$${(DRINKS[drink].price).toFixed(2)}</p>
       <button id="${drink}" onClick="addDrinkClicked(this.id)">Add</button></div>`;
     parent.appendChild(child);
   }
@@ -22,7 +22,7 @@ function ramenClicked() {
     let child = document.createElement('div');
     child.innerHTML = `<div class="ramen-radio"><input type="radio" id="${ramen}" name="ramen" value="${ramen}"
       onclick="ramenRadioClicked(this.id)" checked>
-      <label for="${ramen}"><p>${RAMEN[ramen].name}</p><p>$${Number(RAMEN[ramen].price).toFixed(2)}</p></label></div>`;
+      <label for="${ramen}"><p>${RAMEN[ramen].name}</p><p>$${(RAMEN[ramen].price).toFixed(2)}</p></label></div>`;
     form.appendChild(child);
   }
   for (const topping in TOPPINGS) {
@@ -42,7 +42,7 @@ function sidesClicked() {
   for (const side in SIDES) {
     let child = document.createElement('div');
     child.innerHTML = `<div class="sides"><img src="${SIDES[side].img}" class="sides-img">
-      <p>${SIDES[side].name}</p><p>$${Number(SIDES[side].price).toFixed(2)}</p>
+      <p>${SIDES[side].name}</p><p>$${(SIDES[side].price).toFixed(2)}</p>
       <button id="${side}" onClick="addSideClicked(this.id)">Add</button></div>`;
     parent.appendChild(child);
   }
@@ -55,7 +55,7 @@ function cartClicked() {
     let child = document.createElement('div');
     child.innerHTML = `<div class="cart"><img src="${cart[item].img}" class="cart-img">
       <p>${cart[item].name}</p><p>x${cart[item].amount}</p>
-      <p>$${(Number(cart[item].price) * Number(cart[item].amount)).toFixed(2)}</p></div>`
+      <p>$${(cart[item].price * cart[item].amount).toFixed(2)}</p></div>`
     parent.appendChild(child);
 
     if (RAMEN.hasOwnProperty(item)) {
@@ -77,7 +77,7 @@ function cartClicked() {
 
 function addDrinkClicked(buttonID) {
   if (cart.hasOwnProperty(buttonID)) {
-    let count = Number(cart[buttonID].amount);
+    let count = cart[buttonID].amount;
     count += 1;
     cart[buttonID].amount = count;
   } else {
@@ -91,7 +91,7 @@ function addDrinkClicked(buttonID) {
 
 function addSideClicked(buttonID) {
   if (cart.hasOwnProperty(buttonID)) {
-    let count = Number(cart[buttonID].amount);
+    let count = cart[buttonID].amount;
     count += 1;
     cart[buttonID].amount = count;
   } else {
@@ -115,16 +115,16 @@ function ramenSubmitClicked() {
     if (ramenRadio[index].checked) {
       newRamen = ramenRadio[index].id;
       if (cart.hasOwnProperty(newRamen)) {
-        let count = Number(cart[newRamen].amount);
+        let count = cart[newRamen].amount;
         count += 1;
         cart[newRamen].amount = count;
-        cart[newRamen][count] = ramenToppings();
+        cart[newRamen][count] = setRamenToppings();
       } else {
         cart[newRamen] = {};
         cart[newRamen].img = RAMEN[newRamen].img;
         cart[newRamen].name = RAMEN[newRamen].name;
         cart[newRamen].price = RAMEN[newRamen].price;
-        cart[newRamen]["1"] = ramenToppings();
+        cart[newRamen]["1"] = setRamenToppings();
         cart[newRamen].amount = 1;
       }
     }
@@ -133,7 +133,7 @@ function ramenSubmitClicked() {
 
 
 
-function ramenToppings() {
+function setRamenToppings() {
   let toppingsCheckbox = document.getElementsByName('topping');
   let toppings = [];
   for (let index = 0; index < toppingsCheckbox.length; index += 1) {
@@ -142,5 +142,14 @@ function ramenToppings() {
     }
   }
   return toppings;
+}
+
+function getTotalPrice() {
+  let price = 0;
+  for (const item in cart) {
+    if (DRINKS.hasOwnProperty(item)) {
+      price += DRINKS[item].price;
+    }
+  }
 }
 

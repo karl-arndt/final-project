@@ -78,7 +78,7 @@ function cartClicked() {
   parent.appendChild(totalPrice);
   
   let submitOrder = document.createElement('div');
-  submitOrder.innerHTML = `<button id="submit-order-button" onclick="submitOrder()">Place your order</button>`;
+  submitOrder.innerHTML = `<button id="submit-order-button" onclick="submitOrder()">${TEXT[language].submit_order}</button>`;
   parent.appendChild(submitOrder);
 }
 
@@ -174,6 +174,7 @@ function getTotalPrice() {
 }
 
 function submitOrder() {
+  // https://www.freecodecamp.org/news/check-if-an-object-is-empty-in-javascript/
   if (Object.keys(cart).length === 0) {
     alert(TEXT[language].empty_cart);
   } else {

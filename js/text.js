@@ -16,6 +16,7 @@
     fish_cake: "Steamed Fish Cake",
     seaweed: "Dried Seaweed",
     green_onion: "Green Onion",
+    submit_order: "Place your order",
     empty_cart: "Cart is Empty",
   }
 }

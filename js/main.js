@@ -180,5 +180,31 @@ function submitOrder() {
   } else {
     let parent = document.querySelector('#content');
     parent.innerHTML = '';
+    document.querySelector('#navbar').style.display = "none";
+    for (const item in cart) {
+      let child = document.createElement('div');
+      child.innerHTML = `<div class="cart"><img src="${cart[item].img}" class="cart-img">
+        <p>${cart[item].name}</p><p>x${cart[item].amount}</p>
+        <p>$${(cart[item].price * cart[item].amount).toFixed(2)}</p></div>`
+      parent.appendChild(child);
+  
+      if (RAMEN.hasOwnProperty(item)) {
+        let grandchild = document.createElement('div');
+        for (index = 1; true; index += 1) {
+          if (!cart[item].hasOwnProperty(String(index))) {
+            break;
+          } else {
+            let arr = cart[item][String(index)];
+            for (let i = 0; i < arr.length; i++) {
+              grandchild.innerHTML += `<div class="cart-ramen-topping">${TOPPINGS[arr[i]].name} $${TOPPINGS[arr[i]].price.toFixed(2)}</div>`;
+            }
+            child.appendChild(grandchild);
+          }
+        }
+      }
+    }
+    let totalPrice = document.createElement('div');
+    totalPrice.innerHTML = `<div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div>`;
+    parent.appendChild(totalPrice);
   }
 }

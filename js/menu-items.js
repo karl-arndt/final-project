@@ -7,7 +7,7 @@ const DRINKS = {
   green_tea: {
     img: '/images/drinks/green-tea.jpg',
     name: TEXT[language].green_tea,
-    price: 1.50
+    price: 2
   },
   milkis: {
     img: '/images/drinks/milkis.png',

@@ -9,6 +9,16 @@ const DRINKS = {
     name: TEXT[language].green_tea,
     price: 1.50
   },
+  milkis: {
+    img: '',
+    name: TEXT[language].milkis,
+    price: 3
+  },
+  banana_milk: {
+    img: '',
+    name: TEXT[language].banana_milk,
+    price: 1
+  },
   coke: {
     img: '/images/drinks/coke.png',
     name: TEXT[language].coke,
@@ -35,25 +45,25 @@ const SIDES = {
 }
 
 const RAMEN = {
-  shoyu: {
+  shin: {
     img: '',
-    name: TEXT[language].shoyu,
-    price: 12
+    name: TEXT[language].shin,
+    price: 3
   },
-  shio: {
+  shin_black: {
     img: '',
-    name: TEXT[language].shio,
-    price: 10
+    name: TEXT[language].shin_black,
+    price: 4
   },
-  miso: {
+  buldak: {
     img: '',
-    name: TEXT[language].miso,
-    price: 11
+    name: TEXT[language].buldak,
+    price: 3.50
   },
-  tonkotsu: {
+  chapagetti: {
     img: '',
-    name: TEXT[language].tonkotsu,
-    price: 14
+    name: TEXT[language].chapagetti,
+    price: 3.25
   }
 }
 

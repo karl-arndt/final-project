@@ -181,11 +181,16 @@ function submitOrder() {
     let parent = document.querySelector('#content');
     parent.innerHTML = '';
     document.querySelector('#navbar').style.display = "none";
+
+    let submittedText = document.createElement('div');
+    submittedText.innerHTML = `<p>${TEXT[language].submitted_text}</p>`;
+    parent.appendChild(submittedText);
+    
     for (const item in cart) {
       let child = document.createElement('div');
       child.innerHTML = `<div class="cart"><img src="${cart[item].img}" class="cart-img">
         <p>${cart[item].name}</p><p>x${cart[item].amount}</p>
-        <p>$${(cart[item].price * cart[item].amount).toFixed(2)}</p></div>`
+        <p>$${(cart[item].price * cart[item].amount).toFixed(2)}</p></div>`;
       parent.appendChild(child);
   
       if (RAMEN.hasOwnProperty(item)) {

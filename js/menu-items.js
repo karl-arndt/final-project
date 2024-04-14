@@ -68,9 +68,9 @@ const TOPPINGS = {
     name: TEXT[language].egg,
     price: 1
   },
-  bamboo_shoot: {
+  bean_sprout: {
     img: '',
-    name: TEXT[language].bamboo_shoot,
+    name: TEXT[language].bean_sprout,
     price: 0.75
   },
   fish_cake: {

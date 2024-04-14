@@ -1,21 +1,21 @@
 const DRINKS = {
   water: {
-    img: '',
+    img: '/images/drinks/water.png',
     name: TEXT[language].water,
     price: 1
   },
   green_tea: {
-    img: '',
+    img: '/images/drinks/green-tea.jpg',
     name: TEXT[language].green_tea,
     price: 1.50
   },
   milkis: {
-    img: '',
+    img: '/images/drinks/milkis.png',
     name: TEXT[language].milkis,
     price: 3
   },
   banana_milk: {
-    img: '',
+    img: '/images/drinks/banana-milk.jpg',
     name: TEXT[language].banana_milk,
     price: 1
   },

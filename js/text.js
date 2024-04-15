@@ -8,7 +8,7 @@
     banana_milk: "Banana Milk",
     kimchi: "Kimchi",
     rice: "Rice",
-    shin: "Shin Red (Spicy)",
+    shin: "Shin Red (Spicy Beef)",
     shin_black: "Shin Black (Beef Bone Broth)",
     buldak: "Buldak (Spicy Chicken)",
     chapagetti: "Chapagetti (Jjajang Noodles)",

@@ -1,31 +1,31 @@
 const DRINKS = {
   water: {
-    img: '/images/drinks/water.png',
+    img: '../images/drinks/water.png',
     name: TEXT[language].water,
     price: 1
   },
   green_tea: {
-    img: '/images/drinks/green-tea.jpg',
+    img: '../images/drinks/green-tea.jpg',
     name: TEXT[language].green_tea,
     price: 2
   },
   milkis: {
-    img: '/images/drinks/milkis.png',
+    img: '../images/drinks/milkis.png',
     name: TEXT[language].milkis,
     price: 3
   },
   banana_milk: {
-    img: '/images/drinks/banana-milk.jpg',
+    img: '../images/drinks/banana-milk.jpg',
     name: TEXT[language].banana_milk,
     price: 1
   },
   coke: {
-    img: '/images/drinks/coke.png',
+    img: '../images/drinks/coke.png',
     name: TEXT[language].coke,
     price: 2
   },
   diet_coke: {
-    img: '/images/drinks/diet-coke.png',
+    img: '../images/drinks/diet-coke.png',
     name: TEXT[language].diet_coke,
     price: 2
   }
@@ -33,13 +33,23 @@ const DRINKS = {
 
 const SIDES = {
   kimchi: {
-    img: '',
+    img: '../images/sides/kimchi.jpg',
     name: TEXT[language].kimchi,
     price: 1
   },
   rice: {
-    img: '',
+    img: '../images/sides/rice.jpg',
     name: TEXT[language].rice,
+    price: 1
+  },
+  sprouts: {
+    img: '../images/sides/sprouts.jpg',
+    name: TEXT[language].sprouts,
+    price: 1
+  },
+  cucumber: {
+    img: '../images/sides/cucumber.jpg',
+    name: TEXT[language].cucumber,
     price: 1
   }
 }

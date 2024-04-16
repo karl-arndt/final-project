@@ -7,7 +7,9 @@
     milkis: "Milkis",
     banana_milk: "Banana Milk",
     kimchi: "Kimchi",
-    rice: "Rice",
+    rice: "White Rice",
+    sprouts: "Seasoned Soybean Sprouts",
+    cucumber: "Spicy Cucmber Salad",
     shin: "Shin Red (Spicy Beef)",
     shin_black: "Shin Black (Beef Bone Broth)",
     buldak: "Buldak (Spicy Chicken)",
@@ -20,6 +22,7 @@
     green_onion: "Green Onion",
     submit_order: "Place your order",
     empty_cart: "Cart is Empty",
-    submitted_text: "Your order has been successfully submitted!"
+    submitted_text: "Your order has been successfully submitted!",
+    
   }
 }

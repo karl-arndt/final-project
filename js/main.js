@@ -20,9 +20,9 @@ function ramenClicked() {
   parent.appendChild(form);
   for (const ramen in RAMEN) {
     let child = document.createElement('div');
-    child.innerHTML = `<div class="ramen-radio"><input type="radio" id="${ramen}" name="ramen" value="${ramen}"
+    child.innerHTML = `<span class="ramen-radio"><input type="radio" id="${ramen}" name="ramen" value="${ramen}"
       onclick="ramenRadioClicked(this.id)" checked>
-      <label for="${ramen}"><p>${RAMEN[ramen].name}</p><p>$${(RAMEN[ramen].price).toFixed(2)}</p></label></div>`;
+      <label for="${ramen}">${RAMEN[ramen].name} $${(RAMEN[ramen].price).toFixed(2)}</label></span>`;
     form.appendChild(child);
   }
   for (const topping in TOPPINGS) {

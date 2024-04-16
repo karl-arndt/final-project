@@ -56,22 +56,22 @@ const SIDES = {
 
 const RAMEN = {
   shin: {
-    img: '',
+    img: '../images/ramen/shin-red.png',
     name: TEXT[language].shin,
     price: 3
   },
   shin_black: {
-    img: '',
+    img: '../images/ramen/shin-black.jpg',
     name: TEXT[language].shin_black,
     price: 4
   },
   buldak: {
-    img: '',
+    img: '../images/ramen/buldak.jpg',
     name: TEXT[language].buldak,
     price: 3.50
   },
   chapagetti: {
-    img: '',
+    img: '../images/ramen/chapagetti.jpg',
     name: TEXT[language].chapagetti,
     price: 3.25
   }

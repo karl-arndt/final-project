@@ -63,7 +63,8 @@ function cartClicked() {
     let child = document.createElement('div');
     child.innerHTML = `<div class="cart"><img src="${cart[item].img}" class="cart-img">
       <p>${cart[item].name}</p><p>x${cart[item].amount}</p>
-      <p>$${(cart[item].price * cart[item].amount).toFixed(2)}</p></div>`
+      <p>$${(cart[item].price * cart[item].amount).toFixed(2)}</p>
+      <button id="${item}" onclick="removeClicked(this.id)">Remove</button></div>`;
     parent.appendChild(child);
 
     if (RAMEN.hasOwnProperty(item)) {
@@ -88,6 +89,10 @@ function cartClicked() {
   let submitOrder = document.createElement('div');
   submitOrder.innerHTML = `<button id="submit-order-button" onclick="submitOrder()">${TEXT[language].submit_order}</button>`;
   parent.appendChild(submitOrder);
+}
+
+function removeClicked(id) {
+  alert('remove clicked');
 }
 
 function addDrinkClicked(buttonID) {

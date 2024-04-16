@@ -16,6 +16,9 @@ function drinksClicked() {
 function ramenClicked() {
   let parent = document.querySelector('#content');
   parent.innerHTML = '';
+  let ramenImage = document.createElement('div');
+  ramenImage.innerHTML = `<img class="ramen-image" src="${RAMEN.chapagetti.img}">`;
+  parent.appendChild(ramenImage);
   let form = document.createElement('form');
   parent.appendChild(form);
   for (const ramen in RAMEN) {

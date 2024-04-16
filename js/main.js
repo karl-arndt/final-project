@@ -24,7 +24,7 @@ function ramenClicked() {
   for (const ramen in RAMEN) {
     let child = document.createElement('div');
     child.innerHTML = `<span class="ramen-radio"><input type="radio" id="${ramen}" name="ramen" value="${ramen}"
-      onclick="ramenRadioClicked(this.id)" checked>
+      onClick="ramenRadioClicked(this.id)" checked>
       <label for="${ramen}">${RAMEN[ramen].name} $${(RAMEN[ramen].price).toFixed(2)}</label></span>`;
     form.appendChild(child);
   }
@@ -37,6 +37,11 @@ function ramenClicked() {
   let submit = document.createElement('div');
   submit.innerHTML = '<button id="ramen-submit" onclick="ramenSubmitClicked()">Submit</button>'
   parent.appendChild(submit);
+}
+
+function ramenRadioClicked(id) {
+  let imageDestination = document.querySelector('.ramen-image');
+  imageDestination.src = RAMEN[id].img;
 }
 
 function sidesClicked() {
@@ -111,10 +116,6 @@ function addSideClicked(buttonID) {
     cart[buttonID].price = SIDES[buttonID].price;
     cart[buttonID].amount = 1;
   }
-}
-
-function ramenRadioClicked(radioID) {
-
 }
 
 function ramenSubmitClicked() {

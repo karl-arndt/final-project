@@ -97,14 +97,14 @@ function cartClicked() {
 function removeClicked(id) {
   if (id.includes('-')) {
     // https://stackoverflow.com/questions/573145/get-everything-after-the-dash-in-a-string-in-javascript
-    let ramen = id.substring(id.indexOf('-') + 1);
+    let ramenType = id.substring(id.indexOf('-') + 1);
     id = id.substring(0, id.indexOf('-'));
-    delete cart[ramen][id];
-    cart[ramen].amount -= 1;
-    if (cart[ramen].amount === 0) {
-      delete cart[ramen];
+    delete cart[ramenType][id];
+    cart[ramenType].amount -= 1;
+    if (cart[ramenType].amount === 0) {
+      delete cart[ramenType];
     } else {
-      shiftRamenInCart(ramen, id);
+      shiftRamenInCart(ramenType, id);
     }
   } else {
     delete cart[id];

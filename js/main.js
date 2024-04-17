@@ -71,7 +71,7 @@ function cartClicked() {
 
     if (RAMEN.hasOwnProperty(item)) {
       let grandchild = document.createElement('div');
-      for (index = 1; true; index += 1) {
+      for (let index = 1; true; index += 1) {
         if (!cart[item].hasOwnProperty(String(index))) {
           break;
         } else {
@@ -103,11 +103,23 @@ function removeClicked(id) {
     cart[ramen].amount -= 1;
     if (cart[ramen].amount === 0) {
       delete cart[ramen];
+    } else {
+      shiftRamenInCart(ramen, id);
     }
   } else {
     delete cart[id];
   }
   cartClicked();
+}
+
+function shiftRamenInCart(ramenType, removedRamenID) {
+  removedRamenID = Number(removedRamenID);
+  let nextRamen = removedRamenID + 1;
+  while(cart[ramenType].hasOwnProperty(nextRamen)) {
+    cart[ramenType][(nextRamen - 1)] = cart[ramenType][nextRamen];
+    delete cart[ramenType][nextRamen];
+    nextRamen += 1;
+  }
 }
 
 function addDrinkClicked(buttonID) {

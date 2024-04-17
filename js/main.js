@@ -77,6 +77,7 @@ function cartClicked() {
           for (let i = 0; i < arr.length; i++) {
             grandchild.innerHTML += `<div class="cart-ramen-topping">${TOPPINGS[arr[i]].name} $${TOPPINGS[arr[i]].price.toFixed(2)}</div>`;
           }
+          grandchild.innerHTML += `<button id="${index}" class="remove-ramen" onclick="removeClicked(this.id)">Remove</button>`;
           child.appendChild(grandchild);
         }
       }
@@ -92,7 +93,8 @@ function cartClicked() {
 }
 
 function removeClicked(id) {
-  alert('remove clicked');
+  delete cart[id];
+  cartClicked();
 }
 
 function addDrinkClicked(buttonID) {

@@ -1,6 +1,8 @@
 let language = 'en';
 let cart = {};
 
+// DRINKS FUNCTIONS
+
 function drinksClicked() {
   let parent = document.querySelector('#content');
   parent.innerHTML = "";
@@ -12,6 +14,22 @@ function drinksClicked() {
     parent.appendChild(child);
   }
 }
+
+function addDrinkClicked(buttonID) {
+  if (cart.hasOwnProperty(buttonID)) {
+    let count = cart[buttonID].amount;
+    count += 1;
+    cart[buttonID].amount = count;
+  } else {
+    cart[buttonID] = {};
+    cart[buttonID].img = DRINKS[buttonID].img;
+    cart[buttonID].name = DRINKS[buttonID].name;
+    cart[buttonID].price = DRINKS[buttonID].price;
+    cart[buttonID].amount = 1;
+  }
+}
+
+// RAMEN FUNCTIONS
 
 function ramenClicked() {
   let parent = document.querySelector('#content');
@@ -39,10 +57,47 @@ function ramenClicked() {
   parent.appendChild(submit);
 }
 
+function ramenSubmitClicked() {
+  // https://www.geeksforgeeks.org/how-to-get-value-of-selected-radio-button-using-javascript/
+  let ramenRadio = document.getElementsByName('ramen');
+  let newRamen;
+  for (let index = 0; index < ramenRadio.length; index += 1) {
+    if (ramenRadio[index].checked) {
+      newRamen = ramenRadio[index].id;
+      if (cart.hasOwnProperty(newRamen)) {
+        let count = cart[newRamen].amount;
+        count += 1;
+        cart[newRamen].amount = count;
+        cart[newRamen][count] = setRamenToppings();
+      } else {
+        cart[newRamen] = {};
+        cart[newRamen].img = RAMEN[newRamen].img;
+        cart[newRamen].name = RAMEN[newRamen].name;
+        cart[newRamen].price = RAMEN[newRamen].price;
+        cart[newRamen]["1"] = setRamenToppings();
+        cart[newRamen].amount = 1;
+      }
+    }
+  }
+}
+
+function setRamenToppings() {
+  let toppingsCheckbox = document.getElementsByName('topping');
+  let toppings = [];
+  for (let index = 0; index < toppingsCheckbox.length; index += 1) {
+    if (toppingsCheckbox[index].checked) {
+      toppings.push(toppingsCheckbox[index].id);
+    }
+  }
+  return toppings;
+}
+
 function ramenRadioClicked(id) {
   let imageDestination = document.querySelector('.ramen-image');
   imageDestination.src = RAMEN[id].img;
 }
+
+// SIDES FUNCTIONS
 
 function sidesClicked() {
   let parent = document.querySelector('#content');
@@ -55,6 +110,22 @@ function sidesClicked() {
     parent.appendChild(child);
   }
 }
+
+function addSideClicked(buttonID) {
+  if (cart.hasOwnProperty(buttonID)) {
+    let count = cart[buttonID].amount;
+    count += 1;
+    cart[buttonID].amount = count;
+  } else {
+    cart[buttonID] = {};
+    cart[buttonID].img = SIDES[buttonID].img;
+    cart[buttonID].name = SIDES[buttonID].name;
+    cart[buttonID].price = SIDES[buttonID].price;
+    cart[buttonID].amount = 1;
+  }
+}
+
+// CART FUNCTIONS
 
 function cartClicked() {
   let parent = document.querySelector('#content');
@@ -120,69 +191,6 @@ function shiftRamenInCart(ramenType, removedRamenID) {
     delete cart[ramenType][nextRamen];
     nextRamen += 1;
   }
-}
-
-function addDrinkClicked(buttonID) {
-  if (cart.hasOwnProperty(buttonID)) {
-    let count = cart[buttonID].amount;
-    count += 1;
-    cart[buttonID].amount = count;
-  } else {
-    cart[buttonID] = {};
-    cart[buttonID].img = DRINKS[buttonID].img;
-    cart[buttonID].name = DRINKS[buttonID].name;
-    cart[buttonID].price = DRINKS[buttonID].price;
-    cart[buttonID].amount = 1;
-  }
-}
-
-function addSideClicked(buttonID) {
-  if (cart.hasOwnProperty(buttonID)) {
-    let count = cart[buttonID].amount;
-    count += 1;
-    cart[buttonID].amount = count;
-  } else {
-    cart[buttonID] = {};
-    cart[buttonID].img = SIDES[buttonID].img;
-    cart[buttonID].name = SIDES[buttonID].name;
-    cart[buttonID].price = SIDES[buttonID].price;
-    cart[buttonID].amount = 1;
-  }
-}
-
-function ramenSubmitClicked() {
-  // https://www.geeksforgeeks.org/how-to-get-value-of-selected-radio-button-using-javascript/
-  let ramenRadio = document.getElementsByName('ramen');
-  let newRamen;
-  for (let index = 0; index < ramenRadio.length; index += 1) {
-    if (ramenRadio[index].checked) {
-      newRamen = ramenRadio[index].id;
-      if (cart.hasOwnProperty(newRamen)) {
-        let count = cart[newRamen].amount;
-        count += 1;
-        cart[newRamen].amount = count;
-        cart[newRamen][count] = setRamenToppings();
-      } else {
-        cart[newRamen] = {};
-        cart[newRamen].img = RAMEN[newRamen].img;
-        cart[newRamen].name = RAMEN[newRamen].name;
-        cart[newRamen].price = RAMEN[newRamen].price;
-        cart[newRamen]["1"] = setRamenToppings();
-        cart[newRamen].amount = 1;
-      }
-    }
-  }
-}
-
-function setRamenToppings() {
-  let toppingsCheckbox = document.getElementsByName('topping');
-  let toppings = [];
-  for (let index = 0; index < toppingsCheckbox.length; index += 1) {
-    if (toppingsCheckbox[index].checked) {
-      toppings.push(toppingsCheckbox[index].id);
-    }
-  }
-  return toppings;
 }
 
 function getTotalPrice() {

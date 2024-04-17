@@ -21,8 +21,7 @@
     seaweed: "Seaweed",
     green_onion: "Green Onion",
     submit_order: "Place your order",
-    empty_cart: "Cart is Empty",
+    empty_cart: "Cart Is Empty",
     submitted_text: "Your order has been successfully submitted!",
-    
   }
 }

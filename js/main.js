@@ -156,13 +156,19 @@ function cartClicked() {
       }
     }
   }
-  let totalPrice = document.createElement('div');
-  totalPrice.innerHTML = `<div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div>`;
-  parent.appendChild(totalPrice);
-  
-  let submitOrder = document.createElement('div');
-  submitOrder.innerHTML = `<button id="submit-order-button" onclick="submitOrder()">${TEXT[language].submit_order}</button>`;
-  parent.appendChild(submitOrder);
+   // https://www.freecodecamp.org/news/check-if-an-object-is-empty-in-javascript/
+  if (Object.keys(cart).length !== 0) {
+    let totalPrice = document.createElement('div');
+    totalPrice.innerHTML = `<div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div>`;
+    parent.appendChild(totalPrice);
+    let submitOrder = document.createElement('div');
+    submitOrder.innerHTML = `<button id="submit-order-button" onclick="submitOrder()">${TEXT[language].submit_order}</button>`;
+    parent.appendChild(submitOrder);
+  } else {
+    let emptyCart = document.createElement('div');
+    emptyCart.innerHTML = `<div id ="empty-cart">${TEXT[language].empty_cart}</div>`;
+    parent.appendChild(emptyCart);
+  }
 }
 
 function removeClicked(id) {
@@ -218,42 +224,37 @@ function getTotalPrice() {
 }
 
 function submitOrder() {
-  // https://www.freecodecamp.org/news/check-if-an-object-is-empty-in-javascript/
-  if (Object.keys(cart).length === 0) {
-    alert(TEXT[language].empty_cart);
-  } else {
-    let parent = document.querySelector('#content');
-    parent.innerHTML = '';
-    document.querySelector('#navbar').style.display = "none";
+  let parent = document.querySelector('#content');
+  parent.innerHTML = '';
+  document.querySelector('#navbar').style.display = "none";
 
-    let submittedText = document.createElement('div');
-    submittedText.innerHTML = `<p>${TEXT[language].submitted_text}</p>`;
-    parent.appendChild(submittedText);
-    
-    for (const item in cart) {
-      let child = document.createElement('div');
-      child.innerHTML = `<div class="cart"><img src="${cart[item].img}" class="cart-img">
+  let submittedText = document.createElement('div');
+  submittedText.innerHTML = `<p>${TEXT[language].submitted_text}</p>`;
+  parent.appendChild(submittedText);
+
+  for (const item in cart) {
+    let child = document.createElement('div');
+    child.innerHTML = `<div class="cart"><img src="${cart[item].img}" class="cart-img">
         <p>${cart[item].name}</p><p>x${cart[item].amount}</p>
         <p>$${(cart[item].price * cart[item].amount).toFixed(2)}</p></div>`;
-      parent.appendChild(child);
-  
-      if (RAMEN.hasOwnProperty(item)) {
-        let grandchild = document.createElement('div');
-        for (index = 1; true; index += 1) {
-          if (!cart[item].hasOwnProperty(String(index))) {
-            break;
-          } else {
-            let arr = cart[item][String(index)];
-            for (let i = 0; i < arr.length; i++) {
-              grandchild.innerHTML += `<div class="cart-ramen-topping">${TOPPINGS[arr[i]].name} $${TOPPINGS[arr[i]].price.toFixed(2)}</div>`;
-            }
-            child.appendChild(grandchild);
+    parent.appendChild(child);
+
+    if (RAMEN.hasOwnProperty(item)) {
+      let grandchild = document.createElement('div');
+      for (index = 1; true; index += 1) {
+        if (!cart[item].hasOwnProperty(String(index))) {
+          break;
+        } else {
+          let arr = cart[item][String(index)];
+          for (let i = 0; i < arr.length; i++) {
+            grandchild.innerHTML += `<div class="cart-ramen-topping">${TOPPINGS[arr[i]].name} $${TOPPINGS[arr[i]].price.toFixed(2)}</div>`;
           }
+          child.appendChild(grandchild);
         }
       }
     }
-    let totalPrice = document.createElement('div');
-    totalPrice.innerHTML = `<div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div>`;
-    parent.appendChild(totalPrice);
   }
+  let totalPrice = document.createElement('div');
+  totalPrice.innerHTML = `<div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div>`;
+  parent.appendChild(totalPrice);
 }

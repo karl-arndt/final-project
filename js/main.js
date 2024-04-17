@@ -1,6 +1,28 @@
 let language = 'en';
 let cart = {};
 
+// https://stackoverflow.com/questions/5024056/how-to-pass-parameters-on-onchange-of-html-select
+function languageChanged(selectObject) {
+  language = selectObject.value;
+  refreshPropertyNameValues();
+  drinksClicked();
+}
+
+function refreshPropertyNameValues() {
+  for (const item in DRINKS) {
+    DRINKS[item].name = TEXT[language][item];
+  }
+  for (const item in SIDES) {
+    SIDES[item].name = TEXT[language][item];
+  }
+  for (const item in RAMEN) {
+    RAMEN[item].name = TEXT[language][item];
+  }
+  for (const item in TOPPINGS) {
+    TOPPINGS[item].name = TEXT[language][item];
+  }
+}
+
 // DRINKS FUNCTIONS
 
 function drinksClicked() {

@@ -1,6 +1,6 @@
-body {
+/* body {
   text-align: center;
-}
+} */
 
 #navbar {
   overflow: hidden;
@@ -43,7 +43,7 @@ body {
   width: 90%;
 }
 .drink-img, .sides-img {
-  height: 15vh;
+  height: 20vh;
 }
 
 .cart-img, .cart p {

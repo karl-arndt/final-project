@@ -63,8 +63,10 @@ function cartClicked() {
     let child = document.createElement('div');
     child.innerHTML = `<div class="cart"><img src="${cart[item].img}" class="cart-img">
       <p>${cart[item].name}</p><p>x${cart[item].amount}</p>
-      <p>$${(cart[item].price * cart[item].amount).toFixed(2)}</p>
-      <button id="${item}" onclick="removeClicked(this.id)">Remove</button></div>`;
+      <p>$${(cart[item].price * cart[item].amount).toFixed(2)}</p>`;
+    if (!(RAMEN.hasOwnProperty(item))) {
+      child.innerHTML += `<button id="${item}" onclick="removeClicked(this.id)">Remove</button></div>`;
+    }  
     parent.appendChild(child);
 
     if (RAMEN.hasOwnProperty(item)) {
@@ -77,7 +79,7 @@ function cartClicked() {
           for (let i = 0; i < arr.length; i++) {
             grandchild.innerHTML += `<div class="cart-ramen-topping">${TOPPINGS[arr[i]].name} $${TOPPINGS[arr[i]].price.toFixed(2)}</div>`;
           }
-          grandchild.innerHTML += `<button id="${index}" class="remove-ramen" onclick="removeClicked(this.id)">Remove</button>`;
+          grandchild.innerHTML += `<button id="${index}-${item}" class="remove-ramen" onclick="removeClicked(this.id)">Remove</button>`;
           child.appendChild(grandchild);
         }
       }
@@ -93,7 +95,18 @@ function cartClicked() {
 }
 
 function removeClicked(id) {
-  delete cart[id];
+  if (id.includes('-')) {
+    // https://stackoverflow.com/questions/573145/get-everything-after-the-dash-in-a-string-in-javascript
+    let ramen = id.substring(id.indexOf('-') + 1);
+    id = id.substring(0, id.indexOf('-'));
+    delete cart[ramen][id];
+    cart[ramen].amount -= 1;
+    if (cart[ramen].amount === 0) {
+      delete cart[ramen];
+    }
+  } else {
+    delete cart[id];
+  }
   cartClicked();
 }
 

@@ -57,3 +57,12 @@
 .ramen-image {
   width: 80%;
 }
+
+.logo {
+  display: flex;
+}
+
+#logo-image {
+  width: 25%;
+  border-radius: 50%;
+}

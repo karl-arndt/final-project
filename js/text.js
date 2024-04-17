@@ -23,6 +23,7 @@
     submit_order: "Place your order",
     empty_cart: "Cart Is Empty",
     submitted_text: "Your order has been successfully submitted!",
+    add: "Add",
   },
   ko: {
     coke: "코카콜라",
@@ -48,5 +49,6 @@
     submit_order: "주문 제출",
     empty_cart: "카트가 비어 있습니다",
     submitted_text: "귀하의 주문이 성공적으로 제출되었습니다!",
+    add: "추가하다",
   }
 }

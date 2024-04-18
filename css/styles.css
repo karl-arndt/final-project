@@ -5,6 +5,7 @@
   justify-content: space-around;
   height: 12vh;
   padding-bottom: 2vh;
+  color: teal;
 }
 
 #logo-image {
@@ -13,7 +14,7 @@
 }
 
 #select-language {
-  width: 25%;
+  width: 20%;
   height: 3vh;
   background-color: lightyellow;
   font-weight: bold;
@@ -75,6 +76,25 @@
 
 .drinks {
   border-bottom: solid teal;
+}
+
+/* RAMEN STYLES */
+
+.ramen-image {
+  justify-content: space-around;
+  padding-left: 10%;
+  padding-bottom: 5%;
+}
+
+.ramen-radio {
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 15%;
+}
+
+/* https://stackoverflow.com/questions/12294367/html-radio-buttons-add-space-between-the-buttons-from-the-same-groupe */
+input[type="radio"] {
+  margin: 10px 0;
 }
 
 .drinks, .sides, .cart {

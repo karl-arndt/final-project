@@ -1,5 +1,17 @@
 /* HEADER AND BOTTOM NAV */
 
+.logo {
+  display: flex;
+  justify-content: space-around;
+  height: 12vh;
+  padding-bottom: 2vh;
+}
+
+#logo-image {
+  width: 25%;
+  border-radius: 50%;
+}
+
 #navbar {
   overflow: hidden;
   display: flex;
@@ -31,18 +43,6 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-}
-
-.logo {
-  display: flex;
-  justify-content: space-around;
-  height: 12vh;
-  padding-bottom: 2vh;
-}
-
-#logo-image {
-  width: 25%;
-  border-radius: 50%;
 }
 
 /* */

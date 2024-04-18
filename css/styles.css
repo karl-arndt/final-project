@@ -82,8 +82,9 @@
 
 .ramen-image {
   justify-content: space-around;
-  padding-left: 10%;
-  padding-bottom: 5%;
+  margin-left: 10%;
+  margin-bottom: 5%;
+  border: solid teal;
 }
 
 .ramen-radio {

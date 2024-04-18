@@ -70,8 +70,8 @@ function ramenClicked() {
   }
   for (const topping in TOPPINGS) {
     let child = document.createElement('div');
-    child.innerHTML = `<input type="checkbox" id="${topping}" name="topping">
-      <label for="${topping}">${TOPPINGS[topping].name} $${TOPPINGS[topping].price.toFixed(2)}</label>`;
+    child.innerHTML = `<div class="toppings"><input type="checkbox" id="${topping}" name="topping">
+      <label for="${topping}">${TOPPINGS[topping].name} $${TOPPINGS[topping].price.toFixed(2)}</label></div>`;
     form.appendChild(child);
   }
   let submit = document.createElement('div');

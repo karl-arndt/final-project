@@ -94,7 +94,17 @@
 
 /* https://stackoverflow.com/questions/12294367/html-radio-buttons-add-space-between-the-buttons-from-the-same-groupe */
 input[type="radio"] {
-  margin: 10px 0;
+  margin: 12px 0;
+}
+
+.toppings {
+  font-size: 18px;
+  font-weight: 500px;
+  padding-left: 25%;
+}
+
+input[type="checkbox"] {
+  margin: 6px 0;
 }
 
 .drinks, .sides, .cart {

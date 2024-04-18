@@ -1,6 +1,4 @@
-/* body {
-  text-align: center;
-} */
+/* HEADER AND BOTTOM NAV */
 
 #navbar {
   overflow: hidden;
@@ -35,15 +33,30 @@
   width: 100%;
 }
 
+.logo {
+  display: flex;
+  justify-content: space-around;
+  height: 12vh;
+  padding-bottom: 2vh;
+}
+
+#logo-image {
+  width: 25%;
+  border-radius: 50%;
+}
+
+/* */
+
 .drinks, .sides, .cart {
   display: flex;
   justify-content: space-around;
   padding-bottom: 10px;
-  padding-left: 10%;
+  /* padding-left: 10%; */
   width: 90%;
+  font-size: 18px;
 }
 .drink-img, .sides-img {
-  height: 20vh;
+  height: 18vh;
 }
 
 .cart-img, .cart p {
@@ -52,17 +65,10 @@
 
 #content {
   padding-bottom: 70px;
+  padding-left: 10%;
 }
 
 .ramen-image {
   width: 80%;
 }
 
-.logo {
-  display: flex;
-}
-
-#logo-image {
-  width: 25%;
-  border-radius: 50%;
-}

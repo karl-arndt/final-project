@@ -188,7 +188,7 @@ function cartClicked() {
     parent.appendChild(submitOrder);
   } else {
     let emptyCart = document.createElement('div');
-    emptyCart.innerHTML = `<div id ="empty-cart">${TEXT[language].empty_cart}</div>`;
+    emptyCart.innerHTML = `<div class="cart">${TEXT[language].empty_cart}</div>`;
     parent.appendChild(emptyCart);
   }
 }

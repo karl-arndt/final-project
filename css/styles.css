@@ -85,6 +85,7 @@
   margin-left: 10%;
   margin-bottom: 5%;
   border: solid teal;
+  width: 80%;
 }
 
 .ramen-radio {
@@ -122,6 +123,12 @@ input[type="checkbox"] {
   margin-left: 20%;
 }
 
+/* CART STYLES */
+
+.cart-img, .cart p {
+  width: 15%;
+}
+
 .drinks, .sides, .cart {
   display: flex;
   justify-content: space-around;
@@ -131,15 +138,11 @@ input[type="checkbox"] {
 
 
 
-.cart-img, .cart p {
-  width: 15%;
-}
+
 
 #content {
   padding-bottom: 70px;
 }
 
-.ramen-image {
-  width: 80%;
-}
+
 

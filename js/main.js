@@ -21,6 +21,15 @@ function refreshPropertyNameValues() {
   for (const item in TOPPINGS) {
     TOPPINGS[item].name = TEXT[language][item];
   }
+  for (const item in cart) {
+    if (DRINKS.hasOwnProperty(item)) {
+      cart[item].name = DRINKS[item].name;
+    } else if (SIDES.hasOwnProperty(item)) {
+      cart[item].name = SIDES[item].name;
+    } else if (RAMEN.hasOwnProperty(item)) {
+      cart[item].name = RAMEN[item].name;
+    }
+  }
 }
 
 // DRINKS FUNCTIONS
@@ -75,7 +84,7 @@ function ramenClicked() {
     form.appendChild(child);
   }
   let submit = document.createElement('div');
-  submit.innerHTML = '<button id="ramen-submit" onclick="ramenSubmitClicked()">Submit</button>'
+  submit.innerHTML = `<button id="ramen-submit" onclick="ramenSubmitClicked()">${TEXT[language].submit}</button>`;
   parent.appendChild(submit);
 }
 
@@ -126,9 +135,9 @@ function sidesClicked() {
   parent.innerHTML = "";
   for (const side in SIDES) {
     let child = document.createElement('div');
-    child.innerHTML = `<div class="sides"><img src="${SIDES[side].img}" class="sides-img">
+    child.innerHTML = `<img src="${SIDES[side].img}" class="sides-img"><div class="sides">
       <p>${SIDES[side].name}</p><p>$${(SIDES[side].price).toFixed(2)}</p>
-      <button id="${side}" onClick="addSideClicked(this.id)">${TEXT[language].add}</button></div>`;
+      <button class="add-drink-btn" id="${side}" onClick="addSideClicked(this.id)">${TEXT[language].add}</button></div>`;
     parent.appendChild(child);
   }
 }

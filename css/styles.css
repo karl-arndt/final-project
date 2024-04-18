@@ -43,7 +43,7 @@
   color: black;
 }
 
-#navbar button:active {
+#navbar button:active, .add-drink-btn:active {
   background-color: teal;
   color: white;
 }
@@ -64,19 +64,19 @@
   border-radius: 12px;
 }
 
-.add-drink-btn:active {
-  background-color: teal;
-  color: white;
-}
-
-.drinks > p {
+.drinks > p, .sides > p {
   padding-top: 10%;
   font-weight: 600;
 }
 
-.drinks {
+.drinks, .sides {
   border-bottom: solid teal;
+  padding-bottom: 5px;
 }
+
+.drink-img {
+  height: 18vh;
+} 
 
 /* RAMEN STYLES */
 
@@ -101,22 +101,35 @@ input[type="radio"] {
 .toppings {
   font-size: 18px;
   font-weight: 500px;
-  padding-left: 25%;
+  padding-left: 30%;
 }
 
 input[type="checkbox"] {
-  margin: 6px 0;
+  margin: 7px 0;
+}
+
+#ramen-submit {
+  margin-top: 2%;
+  margin-left: 40%;
+  padding: 5px 15px;
+}
+
+/* SIDES STYLES */
+
+.sides-img {
+  height: 18vh;
+  width: 60vw;
+  margin-left: 20%;
 }
 
 .drinks, .sides, .cart {
   display: flex;
   justify-content: space-around;
-  padding-bottom: 4%;
+  margin-bottom: 4%;
   font-size: 18px;
 }
-.drink-img, .sides-img {
-  height: 18vh;
-}
+
+
 
 .cart-img, .cart p {
   width: 15%;

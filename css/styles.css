@@ -1,4 +1,4 @@
-/* HEADER AND BOTTOM NAV */
+/* HEADER AND BOTTOM NAV STYLES */
 
 .logo {
   display: flex;
@@ -43,7 +43,7 @@
 }
 
 #navbar button:active {
-  background-color: #04AA6D;
+  background-color: teal;
   color: white;
 }
 
@@ -54,14 +54,33 @@
   width: 100%;
 }
 
-/* */
+/* DRINKS STYLES */
+
+.add-drink-btn {
+  width: 18%;
+  height: 3vh;
+  margin-top: 13%;
+  border-radius: 12px;
+}
+
+.add-drink-btn:active {
+  background-color: teal;
+  color: white;
+}
+
+.drinks > p {
+  padding-top: 10%;
+  font-weight: 600;
+}
+
+.drinks {
+  border-bottom: solid teal;
+}
 
 .drinks, .sides, .cart {
   display: flex;
   justify-content: space-around;
-  padding-bottom: 10px;
-  /* padding-left: 10%; */
-  width: 90%;
+  padding-bottom: 4%;
   font-size: 18px;
 }
 .drink-img, .sides-img {
@@ -74,7 +93,6 @@
 
 #content {
   padding-bottom: 70px;
-  padding-left: 10%;
 }
 
 .ramen-image {

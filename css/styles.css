@@ -129,6 +129,16 @@ input[type="checkbox"] {
   width: 15%;
 }
 
+.cart {
+  border-top: solid;
+}
+
+.remove-btn, #total-price, #submit-order-button {
+  padding: 5px 10px;
+  margin-left: 40%;
+  margin-bottom: 2%;
+}
+
 .drinks, .sides, .cart {
   display: flex;
   justify-content: space-around;

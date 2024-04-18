@@ -12,6 +12,15 @@
   border-radius: 50%;
 }
 
+#select-language {
+  width: 25%;
+  height: 3vh;
+  background-color: lightyellow;
+  font-weight: bold;
+  margin-top: 6%;
+  margin-left: 1%;
+}
+
 #navbar {
   overflow: hidden;
   display: flex;

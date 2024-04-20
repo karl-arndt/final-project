@@ -179,9 +179,10 @@ function cartClicked() {
         } else {
           let arr = cart[item][String(index)];
           for (let i = 0; i < arr.length; i++) {
-            grandchild.innerHTML += `<div class="cart-ramen-topping">${TOPPINGS[arr[i]].name} $${TOPPINGS[arr[i]].price.toFixed(2)}</div>`;
+            grandchild.innerHTML += `<div class="container">${TOPPINGS[arr[i]].name} $${TOPPINGS[arr[i]].price.toFixed(2)}</div>`;
           }
-          grandchild.innerHTML += `<button id="${index}-${item}" class="remove-btn" onclick="removeClicked(this.id)">${TEXT[language].remove}</button>`;
+          grandchild.innerHTML += `<div class="container"><button id="${index}-${item}" class="remove-btn" onclick="removeClicked(this.id)">${TEXT[language].remove}</button></div>`;
+          grandchild.innerHTML += '<hr>';
           child.appendChild(grandchild);
         }
       }
@@ -279,8 +280,9 @@ function submitOrder() {
         } else {
           let arr = cart[item][String(index)];
           for (let i = 0; i < arr.length; i++) {
-            grandchild.innerHTML += `<div class="cart-ramen-topping">${TOPPINGS[arr[i]].name} $${TOPPINGS[arr[i]].price.toFixed(2)}</div>`;
+            grandchild.innerHTML += `<div class="container">${TOPPINGS[arr[i]].name} $${TOPPINGS[arr[i]].price.toFixed(2)}</div>`;
           }
+          grandchild.innerHTML += '<hr>';
           child.appendChild(grandchild);
         }
       }

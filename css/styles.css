@@ -87,9 +87,9 @@
 }
 
 .ramen-radio {
-  font-size: 99%;
+  font-size: 125%;
   font-weight: 600;
-  padding-left: 15%;
+  padding-left: 18%;
 }
 
 /* https://stackoverflow.com/questions/12294367/html-radio-buttons-add-space-between-the-buttons-from-the-same-groupe */
@@ -98,13 +98,12 @@ input[type="radio"] {
 }
 
 .toppings {
-  font-size: 95%;
-  font-weight: 500px;
+  font-weight: 600;
   padding-left: 30%;
 }
 
 input[type="checkbox"] {
-  margin: 7px 0;
+  margin: 10px 0;
 }
 
 #ramen-submit {

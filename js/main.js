@@ -258,6 +258,7 @@ function submitOrder() {
   let parent = document.querySelector('#content');
   parent.innerHTML = '';
   document.querySelector('#navbar').style.display = "none";
+  document.querySelector('#select-language').style.display = "none";
 
   let submittedText = document.createElement('div');
   submittedText.innerHTML = `<div class="container"><p>${TEXT[language].submitted_text}</p></div>`;

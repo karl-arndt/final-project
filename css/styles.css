@@ -149,5 +149,12 @@ input[type="checkbox"] {
   padding-bottom: 70px;
 }
 
+a:link, a:visited {
+  text-decoration: none;
+  background-color: teal;
+  padding: 14px 25px;
+  color: white;
+}
+
 
 

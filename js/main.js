@@ -260,7 +260,7 @@ function submitOrder() {
   document.querySelector('#navbar').style.display = "none";
 
   let submittedText = document.createElement('div');
-  submittedText.innerHTML = `<p>${TEXT[language].submitted_text}</p>`;
+  submittedText.innerHTML = `<div class="container"><p>${TEXT[language].submitted_text}</p></div>`;
   parent.appendChild(submittedText);
 
   for (const item in cart) {
@@ -286,6 +286,6 @@ function submitOrder() {
     }
   }
   let totalPrice = document.createElement('div');
-  totalPrice.innerHTML = `<div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div>`;
+  totalPrice.innerHTML = `<div class="container"><div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div></div>`;
   parent.appendChild(totalPrice);
 }

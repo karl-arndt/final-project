@@ -167,7 +167,7 @@ function cartClicked() {
       <p>${cart[item].name}</p><p>x${cart[item].amount}</p>
       <p>$${(cart[item].price * cart[item].amount).toFixed(2)}</p>`;
     if (!(RAMEN.hasOwnProperty(item))) {
-      child.innerHTML += `<div class="container"><button id="${item}" class="remove-btn" onclick="removeClicked(this.id)">Remove</button></div></div>`;
+      child.innerHTML += `<div class="container"><button id="${item}" class="remove-btn" onclick="removeClicked(this.id)">${TEXT[language].remove}</button></div></div>`;
     }  
     parent.appendChild(child);
 
@@ -181,7 +181,7 @@ function cartClicked() {
           for (let i = 0; i < arr.length; i++) {
             grandchild.innerHTML += `<div class="cart-ramen-topping">${TOPPINGS[arr[i]].name} $${TOPPINGS[arr[i]].price.toFixed(2)}</div>`;
           }
-          grandchild.innerHTML += `<button id="${index}-${item}" class="remove-btn" onclick="removeClicked(this.id)">Remove</button>`;
+          grandchild.innerHTML += `<button id="${index}-${item}" class="remove-btn" onclick="removeClicked(this.id)">${TEXT[language].remove}</button>`;
           child.appendChild(grandchild);
         }
       }

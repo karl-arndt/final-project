@@ -108,7 +108,6 @@ input[type="checkbox"] {
 
 #ramen-submit {
   margin-top: 2%;
-  margin-left: 40%;
   padding: 5px 15px;
 }
 
@@ -117,7 +116,6 @@ input[type="checkbox"] {
 .sides-img {
   height: 18vh;
   width: 60vw;
-  margin-left: 20%;
 }
 
 /* CART STYLES */
@@ -154,6 +152,22 @@ a:link, a:visited {
   background-color: teal;
   padding: 14px 25px;
   color: white;
+}
+
+@media only screen and (min-width: 1000px) {
+  body {
+    width: 600px;
+    margin: 0 auto;
+  }
+  #navbar {
+    width: 600px;
+    margin-left: auto;
+  }
+  
+  .sides-img {
+    width: 600px;
+    height: 10%;
+  }
 }
 
 

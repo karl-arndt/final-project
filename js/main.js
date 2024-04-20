@@ -84,7 +84,7 @@ function ramenClicked() {
     form.appendChild(child);
   }
   let submit = document.createElement('div');
-  submit.innerHTML = `<button id="ramen-submit" onclick="ramenSubmitClicked()">${TEXT[language].submit}</button>`;
+  submit.innerHTML = `<div class="container"><button id="ramen-submit" onclick="ramenSubmitClicked()">${TEXT[language].submit}</button></div>`;
   parent.appendChild(submit);
 }
 
@@ -135,8 +135,8 @@ function sidesClicked() {
   parent.innerHTML = "";
   for (const side in SIDES) {
     let child = document.createElement('div');
-    child.innerHTML = `<img src="${SIDES[side].img}" class="sides-img"><div class="sides">
-      <p>${SIDES[side].name}</p><p>$${(SIDES[side].price).toFixed(2)}</p>
+    child.innerHTML = `<div class="container"><img src="${SIDES[side].img}" class="sides-img"></div>
+    <div class="sides"><p>${SIDES[side].name}</p><p>$${(SIDES[side].price).toFixed(2)}</p>
       <button class="add-drink-btn" id="${side}" onClick="addSideClicked(this.id)">${TEXT[language].add}</button></div>`;
     parent.appendChild(child);
   }

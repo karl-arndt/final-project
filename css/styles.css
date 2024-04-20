@@ -81,8 +81,6 @@
 /* RAMEN STYLES */
 
 .ramen-image {
-  justify-content: space-around;
-  margin-left: 10%;
   margin-bottom: 5%;
   border: solid teal;
   width: 80%;

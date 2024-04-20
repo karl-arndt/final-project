@@ -66,7 +66,7 @@ function ramenClicked() {
   let parent = document.querySelector('#content');
   parent.innerHTML = '';
   let ramenImage = document.createElement('div');
-  ramenImage.innerHTML = `<img class="ramen-image" src="${RAMEN.chapagetti.img}">`;
+  ramenImage.innerHTML = `<div class="container"><img class="ramen-image" src="${RAMEN.chapagetti.img}"></div>`;
   parent.appendChild(ramenImage);
   let form = document.createElement('form');
   parent.appendChild(form);

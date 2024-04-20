@@ -89,7 +89,7 @@
 }
 
 .ramen-radio {
-  font-size: 20px;
+  font-size: 99%;
   font-weight: 600;
   padding-left: 15%;
 }
@@ -100,7 +100,7 @@ input[type="radio"] {
 }
 
 .toppings {
-  font-size: 18px;
+  font-size: 95%;
   font-weight: 500px;
   padding-left: 30%;
 }
@@ -125,18 +125,20 @@ input[type="checkbox"] {
 
 /* CART STYLES */
 
-.cart-img, .cart p {
+.cart-img {
   width: 15%;
 }
 
 .cart {
-  border-top: solid;
+  border-top: solid teal;
 }
 
-.remove-btn, #total-price, #submit-order-button {
-  padding: 5px 10px;
-  margin-left: 40%;
-  margin-bottom: 2%;
+.container {
+  text-align: center;
+}
+
+.remove-btn, #total-price {
+  margin-bottom: 5px;
 }
 
 .drinks, .sides, .cart {
@@ -145,10 +147,6 @@ input[type="checkbox"] {
   margin-bottom: 4%;
   font-size: 18px;
 }
-
-
-
-
 
 #content {
   padding-bottom: 70px;

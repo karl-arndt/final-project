@@ -167,7 +167,7 @@ function cartClicked() {
       <p>${cart[item].name}</p><p>x${cart[item].amount}</p>
       <p>$${(cart[item].price * cart[item].amount).toFixed(2)}</p>`;
     if (!(RAMEN.hasOwnProperty(item))) {
-      child.innerHTML += `<button id="${item}" class="remove-btn" onclick="removeClicked(this.id)">Remove</button></div>`;
+      child.innerHTML += `<div class="container"><button id="${item}" class="remove-btn" onclick="removeClicked(this.id)">Remove</button></div></div>`;
     }  
     parent.appendChild(child);
 
@@ -190,10 +190,10 @@ function cartClicked() {
    // https://www.freecodecamp.org/news/check-if-an-object-is-empty-in-javascript/
   if (Object.keys(cart).length !== 0) {
     let totalPrice = document.createElement('div');
-    totalPrice.innerHTML = `<div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div>`;
+    totalPrice.innerHTML = `<div class="container"><div id="total-price">Total: $${(getTotalPrice()).toFixed(2)}</div></div>`;
     parent.appendChild(totalPrice);
     let submitOrder = document.createElement('div');
-    submitOrder.innerHTML = `<button id="submit-order-button" onclick="submitOrder()">${TEXT[language].submit_order}</button>`;
+    submitOrder.innerHTML = `<div class="container"><button id="submit-order-button" onclick="submitOrder()">${TEXT[language].submit_order}</button></div>`;
     parent.appendChild(submitOrder);
   } else {
     let emptyCart = document.createElement('div');
